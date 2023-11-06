@@ -47,10 +47,18 @@ function win(player){
     })
     if(iswin)
         end()
+    else if(player1.length+player2.length==9){
+        draw()
+    }
 }
 
 function end(){
     tittle.innerText=`Jogador ${turn==0? '1': '2'} venceu`
+    endgame.prepend(tittle)
+    endgame.style.display='flex'
+}
+function draw(){
+    tittle.innerText=`Empate`
     endgame.prepend(tittle)
     endgame.style.display='flex'
 }
